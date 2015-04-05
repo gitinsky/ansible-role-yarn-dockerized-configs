@@ -1,0 +1,11 @@
+- name: create ext volume for configs
+  file: state=directory path={{ ext_hadoop_conf_volume }}
+
+- name: put yarn-site.xml config
+  template: src=yarn-site.xml dest={{ ext_hadoop_conf_volume }}/yarn-site.xml
+
+- name: put yarn-env.sh config
+  template: src=yarn-env.sh dest={{ ext_hadoop_conf_volume }}/yarn-env.sh
+
+- name: put mapred-site.xml config
+  template: src=mapred-site.xml dest={{ ext_hadoop_conf_volume }}/mapred-site.xml
