@@ -13,13 +13,13 @@
 
 <property>
   <name>mapreduce.jobhistory.address</name>
-  <value>{{ jobhistory_host }}:10020</value>
+  <value>{{ jobhistory_host }}:{{ jobhistory_port }}</value>
   <description>MapReduce JobHistory Server IPC host:port</description>
 </property>
 
 <property>
   <name>mapreduce.jobhistory.webapp.address</name>
-  <value>{{ jobhistory_host }}:19888</value>
+  <value>{{ jobhistory_host }}:{{ jobhistory_webapp_port }}</value>
   <description>MapReduce JobHistory Server Web UI host:port</description>
 </property>
 
@@ -74,6 +74,16 @@
 <property>
   <name>mapreduce.shuffle.port</name>
   <value>{{ yarn_shuffle_port }}</value>
+</property>
+
+<property>
+  <name>mapreduce.jobhistory.admin.address</name>
+  <value>0.0.0.0:{{ jobhistory_admin_port }}</value>
+</property>
+
+<property>
+  <name>yarn.app.mapreduce.am.job.client.port-range</name>
+  <value>{{ appmaster_portrange }}</value>
 </property>
 
 </configuration>
