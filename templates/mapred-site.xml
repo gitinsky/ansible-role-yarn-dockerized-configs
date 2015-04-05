@@ -71,4 +71,9 @@
   <description>...</description>
 </property>
 
+<property>
+  <name>mapreduce.shuffle.port</name>
+  <value>{{ yarn_shuffle_port }}</value>
+</property>
+
 </configuration>
